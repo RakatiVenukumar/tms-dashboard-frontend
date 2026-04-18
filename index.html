@@ -16,67 +16,136 @@
 <body>
 
 
+    <!-- Sidebar (fixed, full height) -->
+    <nav class="sidebar-blue d-flex flex-column align-items-center justify-content-start py-3 position-fixed top-0 start-0" style="width:48px; height:100vh; z-index:1040;">
+        <ul class="nav nav-pills flex-column mb-auto w-100 align-items-center" aria-label="Sidebar navigation">
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link sidebar-icon-link active cursor-pointer d-flex flex-column align-items-center justify-content-center" tabindex="0">
+                    <i class="bi bi-grid-fill sidebar-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link sidebar-icon-link cursor-pointer d-flex flex-column align-items-center justify-content-center" tabindex="0">
+                    <i class="bi bi-calendar-event sidebar-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link sidebar-icon-link cursor-pointer d-flex flex-column align-items-center justify-content-center" tabindex="0">
+                    <i class="bi bi-list-task sidebar-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link sidebar-icon-link cursor-pointer d-flex flex-column align-items-center justify-content-center" tabindex="0">
+                    <i class="bi bi-folder sidebar-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link sidebar-icon-link cursor-pointer d-flex flex-column align-items-center justify-content-center" tabindex="0">
+                    <i class="bi bi-question-circle sidebar-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
     <!-- Header -->
-    <header class="navbar navbar-expand-lg navbar-light bg-light px-3">
-        <a class="navbar-brand fw-bold" href="#">CYNOSURE</a>
-        <span class="ms-3">Employee Self Service</span>
-        <div class="ms-auto">
-            <span class="me-3">Welcome Employee</span>
+    <header class="navbar navbar-expand-lg navbar-light main-header" style="font-family: 'Poppins', Arial, sans-serif; margin-left:48px; height:48px; background:#fff; padding:8px 16px; min-width:0;">
+        <div class="d-flex align-items-center h-100">
+            <a class="navbar-brand d-flex flex-column align-items-start py-0 me-3" href="#" style="line-height:1;">
+                <span style="font-family: 'Poppins', Arial, sans-serif; font-size:2rem; color:#e53935; letter-spacing:0.1em; font-weight:600;">CYNOSURE</span>
+                <span style="font-size:1.1rem; font-weight:500;">
+                    <span style="color:#2ecc40;">technology</span>
+                    <span style="color:#555; font-size:1.2em; font-weight:700; margin:0 0.2em;">&gt;</span>
+                    <span style="color:#e53935;">s</span><span style="color:#ff9800;">t</span><span style="color:#00bcd4;">r</span><span style="color:#ff4081;">a</span><span style="color:#43a047;">t</span><span style="color:#ffd600;">e</span><span style="color:#388e3c;">g</span><span style="color:#1976d2;">y</span>
+                </span>
+            </a>
+            <span class="ms-3" style="color:#43b864; font-size:1.4rem; font-weight:400; font-family:'Poppins', Arial, sans-serif;">Employee Self Service</span>
+        </div>
+        <div class="ms-auto d-flex align-items-center gap-2">
+            <span class="fw-bold" style="color:#174ea6; font-size:1.3rem; font-family:'Poppins', Arial, sans-serif;">Welcome Employee</span>
+            <i class="bi bi-link-45deg" style="font-size:1.5rem; color:#174ea6;"></i>
+            <i class="bi bi-person-circle" style="font-size:2.2rem; color:#174ea6; background:#fff; border-radius:50%; border:2px solid #e0e0e0;"></i>
         </div>
     </header>
 
-    <div class="container-fluid bg-light min-vh-100">
-        <div class="row flex-nowrap">
-            <!-- Sidebar -->
-            <nav class="col-auto col-md-2 d-flex flex-column bg-white border-end min-vh-100 p-0 shadow-sm">
-                <ul class="nav nav-pills flex-column mb-auto mt-4">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active cursor-pointer" tabindex="0">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link cursor-pointer" tabindex="0">Menu 1</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link cursor-pointer" tabindex="0">Menu 2</a>
-                    </li>
-                    <!-- Add more menu items as needed -->
-                </ul>
-            </nav>
+    <!-- Dashboard White Bar -->
+    <div class="dashboard-bar d-flex align-items-center justify-content-between" style="margin-left:48px;">
+        <span class="fw-bold dashboard-label" style="font-size:1.2rem; color:#1976d2; letter-spacing:0.01em;">Dashboard</span>
+        <div class="ms-auto d-flex align-items-center gap-2">
+            <button class="btn btn-outline-primary btn-sm dashboard-btn" style="border-radius:8px;">2025-2026</button>
+            <button class="btn btn-primary btn-sm dashboard-btn" style="border-radius:8px;">Create +</button>
+        </div>
+    </div>
 
-            <!-- Main Content -->
-            <main class="col px-2 px-md-4 py-4">
-                <h2 class="mb-4">Hello kamlesh,</h2>
-                <!-- Dashboard Summary Cards -->
-                <div class="row g-3 mb-4 flex-wrap">
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card text-center shadow-sm border-0">
-                            <div class="card-body">
-                                <div class="fs-4 fw-bold text-success">12</div>
+    <div class="main-content-scrollable dashboard-maxwidth">
+        <main class="col px-2 px-md-4 py-4">
+                <h2 class="mb-4" style="font-family:'Poppins', Arial, sans-serif;">Hello kamlesh,</h2>
+                <!-- Dashboard Summary Cards and Upcoming Events -->
+                <div class="row g-3 mb-4 align-items-stretch">
+                    <div class="col-12 col-sm-6 col-lg-2">
+                        <div class="dashboard-card card text-center h-100">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                <div class="summary-icon-bg summary-icon-green mb-2"><i class="bi bi-calendar2-check"></i></div>
+                                <div class="fs-3 fw-bold text-success">12</div>
                                 <div class="card-title mb-0">Today's Meeting</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card text-center shadow-sm border-0">
-                            <div class="card-body">
-                                <div class="fs-4 fw-bold text-primary">12</div>
+                    <div class="col-12 col-sm-6 col-lg-2">
+                        <div class="dashboard-card card text-center h-100">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                <div class="summary-icon-bg summary-icon-purple mb-2"><i class="bi bi-clipboard-check"></i></div>
+                                <div class="fs-3 fw-bold text-primary">12</div>
                                 <div class="card-title mb-0">Today's Task</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card text-center shadow-sm border-0">
-                            <div class="card-body">
-                                <div class="fs-4 fw-bold text-warning">12</div>
+                    <div class="col-12 col-sm-6 col-lg-2">
+                        <div class="dashboard-card card text-center h-100">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                <div class="summary-icon-bg summary-icon-orange mb-2"><i class="bi bi-clipboard-data"></i></div>
+                                <div class="fs-3 fw-bold text-warning">12</div>
                                 <div class="card-title mb-0">Total Pending Task</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card text-center shadow-sm border-0">
-                            <div class="card-body">
-                                <div class="fs-4 fw-bold text-danger">12</div>
+                    <div class="col-12 col-sm-6 col-lg-2">
+                        <div class="dashboard-card card text-center h-100">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                <div class="summary-icon-bg summary-icon-pink mb-2"><i class="bi bi-calendar-heart"></i></div>
+                                <div class="fs-3 fw-bold text-danger">12</div>
                                 <div class="card-title mb-0">Today's Meeting</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="dashboard-card card h-100">
+                            <div class="card-header bg-white fw-bold" style="font-family:'Poppins', Arial, sans-serif;">Upcoming Events</div>
+                            <div class="card-body d-flex align-items-center">
+                                <div class="summary-icon-bg summary-icon-blue me-3"><i class="bi bi-calendar-event"></i></div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="text-center me-3">
+                                            <div class="fw-bold fs-4">03</div>
+                                            <div class="small text-muted">July</div>
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold">Project Kickoff</div>
+                                            <div class="small text-muted">The event details will come here in this line.</div>
+                                            <div class="small"><i class="bi bi-clock"></i> 12:00 PM</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="text-center me-3">
+                                            <div class="fw-bold fs-4">05</div>
+                                            <div class="small text-muted">July</div>
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold">Another Event</div>
+                                            <div class="small text-muted">Event details here.</div>
+                                            <div class="small"><i class="bi bi-clock"></i> 03:00 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,40 +220,10 @@
                                     <div class="row g-3 flex-wrap">
                                         <div class="col-12">
                                             <div class="card shadow-sm border-0">
-                                                <div class="card-header bg-white fw-bold">Upcoming Events</div>
-                                                <div class="card-body">
-                                                    <div class="d-flex align-items-center mb-3">
-                                                        <div class="text-center me-3">
-                                                            <div class="fw-bold fs-4">03</div>
-                                                            <div class="small text-muted">July</div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="fw-bold">Project Kickoff</div>
-                                                            <div class="small text-muted">The event details will come here in this line.</div>
-                                                            <div class="small"><i class="bi bi-clock"></i> 12:00 PM</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="text-center me-3">
-                                                            <div class="fw-bold fs-4">05</div>
-                                                            <div class="small text-muted">July</div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="fw-bold">Another Event</div>
-                                                            <div class="small text-muted">Event details here.</div>
-                                                            <div class="small"><i class="bi bi-clock"></i> 03:00 PM</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="card shadow-sm border-0">
                                                 <div class="card-header bg-white fw-bold">Feed</div>
                                                 <div class="card-body" style="max-height: 250px; overflow-y: auto;">
                                                     <div class="mb-3">
                                                         <div class="fw-bold small">New Task Assigned <span class="badge bg-primary ms-1">Unread</span></div>
-                                                                                                            <div class="fw-bold small">New Task Assigned <span class="badge bg-primary ms-1 cursor-pointer" tabindex="0" aria-label="Toggle read/unread notification">Unread</span></div>
                                                         <div class="small text-muted">You have been assigned a new task by Ramesh Pandey (Team Lead) in the project.<br>By: Ramesh Pandey | 12:32</div>
                                                     </div>
                                                     <hr class="my-2">
@@ -227,9 +266,9 @@
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <div class="me-2">
-                                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle" width="28" height="28" alt="Avatar of John Doe">
-                                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle ms-n2" width="28" height="28" alt="Avatar of Jane Smith">
-                                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle ms-n2" width="28" height="28" alt="Avatar of Alex Brown">
+                                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle" width="28" height="28" alt="User1">
+                                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle ms-n2" width="28" height="28" alt="User2">
+                                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle ms-n2" width="28" height="28" alt="User3">
                                                     </div>
                                                     <span class="small text-muted me-2">12 tasks</span>
                                                     <span class="small text-muted">86 Activities</span>
@@ -248,8 +287,8 @@
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <div class="me-2">
-                                                        <img src="https://randomuser.me/api/portraits/women/46.jpg" class="rounded-circle" width="28" height="28" alt="Avatar of Priya Patel">
-                                                        <img src="https://randomuser.me/api/portraits/men/47.jpg" class="rounded-circle ms-n2" width="28" height="28" alt="Avatar of Michael Lee">
+                                                        <img src="https://randomuser.me/api/portraits/women/46.jpg" class="rounded-circle" width="28" height="28" alt="User4">
+                                                        <img src="https://randomuser.me/api/portraits/men/47.jpg" class="rounded-circle ms-n2" width="28" height="28" alt="User5">
                                                     </div>
                                                     <span class="small text-muted me-2">12 tasks</span>
                                                     <span class="small text-muted">86 Activities</span>
