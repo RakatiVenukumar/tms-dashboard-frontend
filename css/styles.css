@@ -253,13 +253,21 @@ body, html {
 	max-width: 48px;
 	width: 48px;
 	border: none;
+	padding: 0 !important;
+	overflow-x: hidden !important;
+	overflow-y: hidden !important;
+	position: fixed !important;
+	z-index: 2000 !important;
+}
+ .sidebar-blue ul.nav {
+	margin-top: 120px !important;
 }
 .sidebar-icon-link {
 	color: #fff !important;
 	background: none !important;
 	border: none !important;
 	font-size: 1.3rem;
-	padding: 0.7rem 0.5rem;
+	padding: 0 !important;
 	border-radius: 0.7rem;
 	transition: background 0.2s;
 	width: 48px;
@@ -267,18 +275,39 @@ body, html {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0 auto;
+	margin: 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hide any accidental text in sidebar icon links */
+.sidebar-icon-link > *:not(i) {
+    display: none !important;
+}
+.sidebar-icon-link i {
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 .sidebar-icon-link.active, .sidebar-icon-link:focus, .sidebar-icon-link:hover {
 	background: #2563eb !important;
 	color: #fff !important;
 	border-radius: 12px;
+	padding-left: 0 !important;
+	margin: 0 !important;
+	width: 100% !important;
+	align-items: center !important;
+	justify-content: center !important;
+	list-style: none !important;
 }
 .sidebar-icon {
 	font-size: 1.7rem;
 	display: block;
 	margin-bottom: 0;
 	color: #fff !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100%;
 }
 
 /* Main content background */
