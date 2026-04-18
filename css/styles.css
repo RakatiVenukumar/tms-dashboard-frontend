@@ -248,7 +248,10 @@ body, html {
 /* Sidebar blue background and icon styles */
 
 .sidebar-blue {
-	background: #144a8c !important;
+	background: linear-gradient(180deg, #1976d2 0%, #144a8c 100%) !important;
+	box-shadow: 2px 0 16px 0 rgba(25, 118, 210, 0.10), 0 2px 8px 0 rgba(44,62,80,0.08);
+	backdrop-filter: blur(6px) saturate(140%);
+	border-right: 1.5px solid rgba(255,255,255,0.12);
 	min-width: 48px;
 	max-width: 48px;
 	width: 48px;
@@ -269,15 +272,16 @@ body, html {
 	font-size: 1.3rem;
 	padding: 0 !important;
 	border-radius: 0.7rem;
-	transition: background 0.2s;
+	transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.15s;
+	box-shadow: none;
 	width: 48px;
 	height: 48px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin: 0 !important;
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
 
 /* Hide any accidental text in sidebar icon links */
@@ -290,14 +294,10 @@ body, html {
     text-align: center;
 }
 .sidebar-icon-link.active, .sidebar-icon-link:focus, .sidebar-icon-link:hover {
-	background: #2563eb !important;
-	color: #fff !important;
-	border-radius: 12px;
-	padding-left: 0 !important;
-	margin: 0 !important;
-	width: 100% !important;
-	align-items: center !important;
 	justify-content: center !important;
+	background: linear-gradient(135deg, #2563eb 60%, #1976d2 100%) !important;
+	box-shadow: 0 2px 12px 0 rgba(25, 118, 210, 0.13);
+	transform: scale(1.08);
 	list-style: none !important;
 }
 .sidebar-icon {
@@ -387,5 +387,111 @@ body, html {
 			box-shadow: 0 1.5px 6px 0 rgba(44,62,80,0.04);
 		font-size: 0.97rem;
 	}
+}
+/* --- Advanced UI Enhancements --- */
+.dashboard-card {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(2.5px) saturate(120%);
+  box-shadow: 0 4px 24px 0 rgba(25, 118, 210, 0.07), 0 1.5px 6px 0 rgba(44,62,80,0.07);
+  border: 1.5px solid #e3eaf5;
+  border-radius: 18px;
+  transition: box-shadow 0.22s, border-color 0.22s, transform 0.18s, background 0.22s;
+  cursor: pointer;
+}
+.dashboard-card:hover, .dashboard-card:focus-within {
+  box-shadow: 0 8px 32px 0 rgba(25, 118, 210, 0.16), 0 2px 8px 0 rgba(44,62,80,0.10);
+  border-color: #1976d2;
+  transform: translateY(-4px) scale(1.025);
+  background: rgba(232,244,253,0.95);
+}
+.dashboard-card:active {
+  box-shadow: 0 2px 8px 0 rgba(25, 118, 210, 0.13);
+  border-color: #1565c0;
+  background: #e3f0ff;
+}
+.dashboard-card.active, .dashboard-card.selected {
+  border-color: #43b864;
+  box-shadow: 0 0 0 3px #43b86433, 0 4px 24px 0 rgba(67,184,100,0.08);
+}
+.card {
+  transition: box-shadow 0.22s, border-color 0.22s, background 0.22s, transform 0.18s;
+}
+.summary-icon-bg {
+  box-shadow: 0 2px 8px 0 rgba(25, 118, 210, 0.10);
+  transition: box-shadow 0.18s, transform 0.15s;
+}
+.summary-icon-bg:hover, .summary-icon-bg:focus {
+  box-shadow: 0 4px 16px 0 rgba(25, 118, 210, 0.18);
+  transform: scale(1.08);
+}
+
+/* --- Card and Section Border Highlight --- */
+.dashboard-card, .card, .section-highlight {
+  border: 2px solid rgba(25, 118, 210, 0.13) !important;
+  box-shadow: 0 2px 12px 0 rgba(25, 118, 210, 0.07);
+}
+.dashboard-card:hover, .dashboard-card:focus-within, .card:hover, .card:focus-within, .section-highlight:hover, .section-highlight:focus-within {
+  border-color: #1976d2 !important;
+  box-shadow: 0 4px 20px 0 rgba(25, 118, 210, 0.16);
+}
+
+/* --- Interactivity: Animated Transitions --- */
+.modal.fade .modal-dialog {
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1), opacity 0.35s cubic-bezier(.4,0,.2,1);
+  transform: translateY(-40px) scale(0.98);
+  opacity: 0;
+}
+.modal.fade.show .modal-dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.dropdown-menu {
+  transition: opacity 0.25s cubic-bezier(.4,0,.2,1), transform 0.25s cubic-bezier(.4,0,.2,1);
+  opacity: 0;
+  transform: translateY(10px);
+}
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dashboard-card, .card {
+  transition: box-shadow 0.22s, border-color 0.22s, transform 0.18s, background 0.22s;
+}
+.dashboard-card:hover, .card:hover {
+  transform: translateY(-4px) scale(1.025);
+}
+
+/* --- Interactivity: Tooltips --- */
+[data-bs-toggle="tooltip"], .has-tooltip {
+  position: relative;
+  cursor: pointer;
+}
+[data-bs-toggle="tooltip"]:hover::after, .has-tooltip:hover::after {
+  content: attr(data-bs-title);
+  position: absolute;
+  left: 50%;
+  bottom: 120%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.92em;
+  white-space: nowrap;
+  opacity: 0.95;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* --- Data Visualization: Animated Progress Bar --- */
+.progress-bar {
+  transition: width 0.8s cubic-bezier(.4,0,.2,1), background 0.3s;
+}
+.progress-bar-animated {
+  animation: progress-bar-stripes 1s linear infinite;
+}
+@keyframes progress-bar-stripes {
+  0% { background-position-x: 1rem; }
+  100% { background-position-x: 0; }
 }
 }
